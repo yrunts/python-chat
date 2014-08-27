@@ -1,0 +1,30 @@
+This includes both OSI and TCP/IP models theory, internals of HTTP protocol, and Python networking libraries (socket, httplib, urllib, requests etc).
+
+For this task you need to create a simple Skype-like REST chat web service and a client for this.
+A server application need not keep state in some storage, it is enough to keep it in memory for simplicity.
+
+A REST protocol should allow to:
+-          Register a new named client (user);
+-          Create, enter, delete a chat room;
+-          Post, update, delete messages into a specific chat room;
+-          Get messages for a chat room (all or only updates since the last known state);
+
+
+
+
+Please, develop a simple *nix client-server application in Python that imitates sending short news messages from multiple contributors to a single server. The application has the following requirements.
+ 
+Server must:
+·         Listen on multiple ports simultaneously (configurable) to process messages from multiple clients at the same time;
+·         Support multiple message transmission protocols (TCP and UDP for now, but easily extendable for other protocols; UDP may be implemented as stubs that don’t do anything);
+·         Write down each incoming message to a log (together with all significant info about this message) and send delivery confirmation back to the client.
+ 
+Client must:
+·         Have a possibility for user to enter:
+o   Server IP/port;
+o   The message to be sent;
+o   Protocol to use to send each message (TCP or UDP; UDP may be implemented as stubs that don’t do anything);
+·         Output the information about all sent messages and their delivery status;
+·         If a server is not reachable at the moment of sending a client should retry sending the message.
+ 
+A nice-to-have feature is a command-line user interface.
